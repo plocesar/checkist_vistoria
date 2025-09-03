@@ -55,7 +55,7 @@ textarea {
 }
 .photo-buttons {
   margin-top: 8px;
-  margin-bottom: 20px; /* espaÃ§o extra */
+  margin-bottom: 20px; /* espaço extra */
 }
 .photo-buttons button {
   margin-right: 6px;
@@ -99,16 +99,18 @@ footer {
   color: #123a85;
 }
 
-/* Responsividade */
+/* 📱 Responsividade */
 @media (max-width: 600px) {
-  .row {
-    flex-direction: column;
-    gap: 6px;
-  }
+  body { font-size: 14px; }
+  .container { padding: 10px; }
+  .item { padding: 10px; }
+  .row { flex-direction: column; align-items: flex-start; }
+  .row label { font-size: 14px; }
   .photo-buttons {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 100%;
   }
   .photo-buttons button {
     margin-right: 0;
@@ -116,9 +118,11 @@ footer {
   }
   textarea {
     max-width: 100%;
+    min-height: 50px;
+    font-size: 14px;
   }
   .signature canvas {
     width: 100% !important;
-    height: 150px;
+    height: 120px !important;
   }
 }
