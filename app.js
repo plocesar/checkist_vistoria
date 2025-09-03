@@ -19,36 +19,66 @@ function previewPhoto(input) {
     reader.readAsDataURL(file);
   }
 }
-// Assinatura
+
+// ✍️ Assinatura corrigida para celular
 let canvas, ctx, drawing = false;
+
 window.onload = () => {
   canvas = document.getElementById("sigPad");
   if (canvas) {
     ctx = canvas.getContext("2d");
-    canvas.addEventListener("mousedown", e => { drawing = true; ctx.beginPath(); ctx.moveTo(e.offsetX, e.offsetY); });
-    canvas.addEventListener("mousemove", e => { if (drawing) { ctx.lineTo(e.offsetX, e.offsetY); ctx.stroke(); } });
-    canvas.addEventListener("mouseup", () => drawing = false);
-    canvas.addEventListener("mouseleave", () => drawing = false);
+    ctx.lineWidth = 2;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "#000";
+
+    // Mouse (PC)
+    canvas.addEventListener("mousedown", e => startDraw(e.offsetX, e.offsetY));
+    canvas.addEventListener("mousemove", e => { if (drawing) draw(e.offsetX, e.offsetY); });
+    canvas.addEventListener("mouseup", endDraw);
+    canvas.addEventListener("mouseleave", endDraw);
+
+    // Toque (Mobile)
     canvas.addEventListener("touchstart", e => {
       e.preventDefault();
-      drawing = true;
-      ctx.beginPath();
-      ctx.moveTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
+      const rect = canvas.getBoundingClientRect();
+      const x = e.touches[0].clientX - rect.left;
+      const y = e.touches[0].clientY - rect.top;
+      startDraw(x, y);
     });
+
     canvas.addEventListener("touchmove", e => {
       e.preventDefault();
-      if (drawing) {
-        ctx.lineTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
-        ctx.stroke();
-      }
+      if (!drawing) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = e.touches[0].clientX - rect.left;
+      const y = e.touches[0].clientY - rect.top;
+      draw(x, y);
     });
-    canvas.addEventListener("touchend", () => drawing = false);
+
+    canvas.addEventListener("touchend", endDraw);
   }
+};
+
+function startDraw(x, y) {
+  drawing = true;
+  ctx.beginPath();
+  ctx.moveTo(x, y);
 }
+
+function draw(x, y) {
+  ctx.lineTo(x, y);
+  ctx.stroke();
+}
+
+function endDraw() {
+  drawing = false;
+}
+
 function clearSig() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+// 📄 Exportar PDF
 async function exportPDF() {
   const { jsPDF } = window.jspdf;
   const pdf = new jsPDF("p", "pt", "a4");
@@ -65,4 +95,3 @@ async function exportPDF() {
 
   pdf.save("checklist-vistoria.pdf");
 }
-
