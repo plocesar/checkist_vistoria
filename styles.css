@@ -167,5 +167,35 @@ header { padding-bottom: 16px; }
   }
   .meta input {
     width: 100%;
-  }
+  }/* Ajuste dos botões de foto */
+.photo-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.file-label {
+  background-color: #123a85;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.file-label:hover {
+  background-color: #0d2c63;
+}
+
+.preview {
+  max-width: 120px;
+  margin-left: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 2px;
+}
+
 }
