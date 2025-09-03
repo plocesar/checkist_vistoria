@@ -695,21 +695,25 @@
       </div>
     </div>
     
-    <div class="signature">
+       <div class="signature">
       <label>✍️ Assinatura da Vistoria</label>
       <canvas id="sigPad" width="500" height="200"></canvas>
       <button type="button" onclick="clearSig()">Limpar assinatura</button>
     </div>
 
-    <div class="toolbar">
+    <div class="toolbar" style="text-align:center; margin-top:20px;">
       <button onclick="exportPDF()">📄 Exportar PDF</button>
     </div>
+
     <footer>
       📲 Instagram: @paulinhosantos.ofc
     </footer>
   </div>
+
+  <!-- Bibliotecas para exportar PDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
+
