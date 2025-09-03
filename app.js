@@ -115,6 +115,20 @@ textarea {
 
 .photo-buttons button:hover {
   background: var(--azul-claro);
+
+  function previewPhoto(input) {
+  const file = input.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const preview = input.closest(".photo-buttons").querySelector(".preview");
+    preview.src = e.target.result;
+    preview.style.display = "block";
+  };
+  reader.readAsDataURL(file);
+}
+
 }
 
 /* Assinatura */
