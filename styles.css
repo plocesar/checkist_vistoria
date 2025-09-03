@@ -136,47 +136,36 @@ header { padding-bottom: 16px; }
   margin-top: 8px;
 }
 
-.meta label{
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.meta label {
+  flex: 1;
+  min-width: 200px;
   display: flex;
   align-items: center;
-  gap: 8px;                /* ícone 📅👤🏢 + texto + input */
-  color: #e7eefb;          /* texto claro no fundo azul */
-  font-weight: 600;
-  flex: 1 1 280px;         /* permite quebrar linha quando faltar espaço */
-  min-width: 0;            /* evita overflow em telas pequenas */
+  gap: 6px;
 }
 
-.meta input[type="text"],
-.meta input[type="date"]{
-  flex: 1 1 auto;
-  width: 100%;             /* ocupa a largura disponível do label */
-  min-width: 0;
-  padding: 8px 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  background: #fff;
-  color: #0a2a66;
-  line-height: 1.2;
-  height: 36px;            /* altura consistente (ajuda no iOS) */
-  box-shadow: 0 1px 0 rgba(0,0,0,.02) inset;
+.meta input {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-/* Placeholder mais discreto */
-.meta input::placeholder{ color:#7a879a; }
-
-/* ====== Mobile ====== */
-@media (max-width: 640px){
-  .meta{
-    flex-direction: column;  /* cada campo numa linha */
+@media (max-width: 600px) {
+  .meta {
+    flex-direction: column;
     gap: 10px;
   }
-  .meta label{
-    width: 100%;
-    gap: 6px;
+  .meta label {
+    min-width: 100%;
   }
-  .meta input[type="text"],
-  .meta input[type="date"]{
+  .meta input {
     width: 100%;
-    height: 38px;
   }
 }
