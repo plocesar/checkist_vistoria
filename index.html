@@ -19,7 +19,16 @@
     .row label { flex:1; font-weight:600; }
     input[type=checkbox] { width:18px; height:18px; accent-color:#123a85; margin-top:2px; }
     .obs { margin-top:8px; }
-    textarea { width:90%; min-height:48px; border:1px solid #ccc; border-radius:8px; padding:6px; resize:vertical; }
+   textarea {
+  width: 100%;
+  max-width: 600px; /* limite de largura */
+  min-height: 60px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  resize: vertical;
+  font-family: inherit;
+}
     .photos { margin-top:8px; }
     .photos button { margin-right:8px; padding:6px 12px; border:none; border-radius:6px; background:#123a85; color:#fff; cursor:pointer; }
     .photos img { display:block; margin-top:8px; max-width:200px; border-radius:6px; }
@@ -737,11 +746,43 @@
   </div>
 </div>
 
-  <div class="signature">
-    <label>✍️ Assinatura da Vistoria</label>
-    <canvas id="sigPad" width="300" height="150"></canvas>
-    <button onclick="clearSig()">Limpar assinatura</button>
-  </div>
+<div class="signature">
+  <label>✍️ Assinatura da Vistoria</label>
+  <canvas id="sigPad" width="300" height="150"></canvas>
+  <button type="button" onclick="clearSig()">Limpar assinatura</button>
+</div>
+
+<script>
+  let canvas = document.getElementById("sigPad");
+  let ctx = canvas.getContext("2d");
+  let drawing = false;
+
+  // Suporte mouse
+  canvas.addEventListener("mousedown", e => { drawing = true; ctx.beginPath(); ctx.moveTo(e.offsetX, e.offsetY); });
+  canvas.addEventListener("mousemove", e => { if (drawing) { ctx.lineTo(e.offsetX, e.offsetY); ctx.stroke(); } });
+  canvas.addEventListener("mouseup", () => drawing = false);
+  canvas.addEventListener("mouseleave", () => drawing = false);
+
+  // Suporte touch (celular/tablet)
+  canvas.addEventListener("touchstart", e => {
+    e.preventDefault();
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
+  });
+  canvas.addEventListener("touchmove", e => {
+    e.preventDefault();
+    if (drawing) {
+      ctx.lineTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
+      ctx.stroke();
+    }
+  });
+  canvas.addEventListener("touchend", () => drawing = false);
+
+  function clearSig() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+</script>
 
   <footer>
     📲 Siga no Instagram: <strong>@paulinhosantos.ofc</strong>
