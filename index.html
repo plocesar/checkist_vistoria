@@ -704,14 +704,77 @@
     </div>
     
        <div class="signature">
-      <label>✍️ Assinatura da Vistoria</label>
-      <canvas id="sigPad" width="500" height="200"></canvas>
-      <button type="button" onclick="clearSig()">Limpar assinatura</button>
-    </div>
+  <label>✍️ Assinatura da Vistoria</label>
+  <canvas id="signature-pad"></canvas>
+  <div class="signature-actions">
+    <button type="button" onclick="clearSignature()">🧹 Limpar assinatura</button>
+    <button type="button" onclick="saveSignature()">💾 Salvar assinatura</button>
+  </div>
+</div>
 
-    <div class="toolbar" style="text-align:center; margin-top:20px;">
-      <button onclick="exportPDF()">📄 Exportar PDF</button>
-    </div>
+<script>
+  const canvas = document.getElementById("signature-pad");
+  const ctx = canvas.getContext("2d");
+  let drawing = false;
+
+  function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = 200;
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "#123a85";
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  function startDraw(e) {
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(getX(e), getY(e));
+    e.preventDefault();
+  }
+
+  function draw(e) {
+    if (!drawing) return;
+    ctx.lineTo(getX(e), getY(e));
+    ctx.stroke();
+    e.preventDefault();
+  }
+
+  function endDraw() {
+    drawing = false;
+    ctx.closePath();
+  }
+
+  function getX(e) {
+    if (e.touches) return e.touches[0].clientX - canvas.getBoundingClientRect().left;
+    return e.clientX - canvas.getBoundingClientRect().left;
+  }
+  function getY(e) {
+    if (e.touches) return e.touches[0].clientY - canvas.getBoundingClientRect().top;
+    return e.clientY - canvas.getBoundingClientRect().top;
+  }
+
+  // Eventos mouse
+  canvas.addEventListener("mousedown", startDraw);
+  canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mouseup", endDraw);
+  canvas.addEventListener("mouseleave", endDraw);
+
+  // Eventos touch
+  canvas.addEventListener("touchstart", startDraw);
+  canvas.addEventListener("touchmove", draw);
+  canvas.addEventListener("touchend", endDraw);
+
+  function clearSignature() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  function saveSignature() {
+    const dataURL = canvas.toDataURL();
+    alert("Assinatura salva! (base64 gerado, pode ser enviado ao backend)");
+    console.log(dataURL);
+  }
+</script>
 
     <footer>
       📲 Instagram: @paulinhosantos.ofc
