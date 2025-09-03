@@ -1,65 +1,182 @@
-// Funções de foto
-function capturePhoto(btn) {
-  const input = btn.parentElement.querySelector("input[type=file]");
-  input.setAttribute("capture", "environment"); // abre câmera traseira no celular
-  input.click();
+:root {
+  --azul-escuro: #0a2a66;
+  --azul-medio: #123a85;
+  --azul-claro: #1e4db7;
+  --branco: #ffffff;
+  --cinza: #f7f8fa;
+  --borda: #d1d5db;
 }
 
-function selectPhoto(btn) {
-  const input = btn.parentElement.querySelector("input[type=file]");
-  input.removeAttribute("capture");
-  input.click();
+body {
+  margin: 0;
+  background: var(--cinza);
+  color: var(--azul-escuro);
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu;
+  padding: 24px;
 }
 
-function previewPhoto(input) {
-  const file = input.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const img = input.parentElement.querySelector(".preview");
-      img.src = e.target.result;
-      img.style.display = "block";
-      img.style.maxWidth = "120px";
-      img.style.marginTop = "8px";
-      img.style.borderRadius = "6px";
-    };
-    reader.readAsDataURL(file);
-  }
+h1 {
+  font-size: 24px;
+  margin: 0 0 12px 0;
+  color: var(--branco);
 }
 
-// Função exportar PDF com assinatura
-async function exportPDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF("p", "pt", "a4");
+header {
+  background: var(--azul-escuro);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
 
-  // Captura todo o conteúdo da página
-  const checklist = document.body;
+.meta {
+  font-size: 14px;
+  color: var(--branco);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-  const canvasChecklist = await html2canvas(checklist, {
-    scale: 2,
-    useCORS: true
-  });
+.meta label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
 
-  const imgData = canvasChecklist.toDataURL("image/png");
-  const pageWidth = doc.internal.pageSize.getWidth();
-  const pageHeight = doc.internal.pageSize.getHeight();
-  const imgProps = doc.getImageProperties(imgData);
-  const pdfWidth = pageWidth;
-  const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+input[type=text],
+input[type=date] {
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 4px;
+}
 
-  doc.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+h2, h3 {
+  color: var(--azul-medio);
+  margin-top: 20px;
+}
 
-  // Adiciona a assinatura
-  const signatureCanvas = document.getElementById("signature-pad");
-  if (signatureCanvas) {
-    const sigData = signatureCanvas.toDataURL("image/png");
-    const sigWidth = 200; // largura da assinatura no PDF
-    const sigHeight = 100;
-    const sigX = pageWidth / 2 - sigWidth / 2; // centraliza
-    const sigY = pageHeight - sigHeight - 40;  // margem inferior
+.item {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+}
 
-    doc.addImage(sigData, "PNG", sigX, sigY, sigWidth, sigHeight);
-  }
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
 
-  doc.save("checklist_vistoria.pdf");
+.row label {
+  flex: 1;
+  font-weight: 600;
+}
+
+input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--azul-medio);
+  margin-top: 2px;
+  border-radius: 50%; /* deixa redondo */
+}
+
+/* Observações menores e centralizadas */
+textarea {
+  width: 95%;
+  max-width: 700px;
+  min-height: 64px;
+  resize: vertical;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font: inherit;
+  display: block;
+  margin: 10px auto 0 auto; /* centraliza */
+}
+
+/* Botões de fotos */
+.photo-buttons {
+  margin-top: 8px;
+}
+
+.photo-buttons button {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  background: var(--azul-medio);
+  color: var(--branco);
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.photo-buttons button:hover {
+  background: var(--azul-claro);
+}
+
+/* Assinatura */
+.signature {
+  padding: 16px;
+  border: 2px dashed var(--azul-claro);
+  border-radius: 12px;
+  margin-top: 20px;
+  background: var(--branco);
+  text-align: center;
+}
+
+#signature-pad {
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  width: 100%;
+  height: 200px;
+  touch-action: none;
+}
+
+.signature-actions {
+  margin-top: 10px;
+}
+
+.signature-actions button {
+  margin: 0 5px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--azul-medio);
+  color: var(--branco);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signature-actions button:hover {
+  background: var(--azul-claro);
+}
+
+/* Toolbar */
+.toolbar {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.toolbar button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  background: var(--azul-medio);
+  color: var(--branco);
+  font-weight: 600;
+}
+
+.toolbar button:hover {
+  background: var(--azul-claro);
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--azul-escuro);
 }
