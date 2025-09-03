@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Check-list de Vistoria</title>
+  <style>
+    :root {
+      --azul-escuro: #0a2a66;
+      --azul-medio: #123a85;
+      --azul-claro: #1e4db7;
+      --branco: #ffffff;
+      --cinza: #f7f8fa;
+      --borda: #d1d5db;
+      --preto: #000000;
+    }
+    body { margin: 0; background: var(--cinza); color: var(--azul-escuro);
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; padding: 24px; }
+    h1 { font-size: 24px; margin: 0 0 12px 0; color: var(--branco); }
+    header { background: var(--azul-escuro); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+    .meta { font-size: 14px; color: var(--branco); }
+    .meta label { margin-right: 16px; }
+    input[type=text], input[type=date] { border: 1px solid var(--borda); border-radius: 8px; padding: 6px 10px; }
+    .toolbar { margin: 12px 0; text-align: right; display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
+    .btn { border: none; border-radius: 8px; padding: 10px 16px; cursor: pointer;
+      background: var(--azul-medio); color: var(--branco); font-weight: 600; }
+    .btn:hover { background: var(--azul-claro); }
+    h2, h3 { color: var(--azul-medio); margin-top: 20px; }
+    .item { background: var(--branco); border: 1px solid var(--borda); border-radius: 10px;
+      padding: 12px; margin: 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,.05); }
+    .row { display: flex; align-items: flex-start; gap: 10px; }
+    .row label { flex: 1; font-weight: 700; color: var(--preto); }
+    input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--azul-medio); margin-top: 2px; }
+    .obs { margin-top: 8px; }
+    .obs label { display: block; font-size: 13px; color: var(--azul-medio); margin-bottom: 4px; }
+    textarea { width: 100%; min-height: 64px; resize: vertical; border: 1px solid var(--borda);
+      border-radius: 12px; padding: 8px 10px; font: inherit; }
+    .signature { padding: 16px; border: 2px dashed var(--azul-claro); border-radius: 12px;
+      margin-top: 24px; background: var(--branco); }
+    .signature label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--azul-medio); }
+    .signature input { width: 100%; padding: 10px 12px; border: 1px solid var(--borda); border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏠 Check-list de Vistoria</h1>
+    <div class="meta">
+      <label>📅 Data: <input type="date" /></label>
+      <label>👤 Responsável: <input type="text" placeholder="Seu nome" /></label>
+      <label>🏢 Imóvel: <input type="text" placeholder="Bloco/Unidade" /></label>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn" id="toggleAll">Selecionar/limpar tudo</button>
+    <button class="btn" onclick="window.print()">Imprimir / Salvar em PDF</button>
+  </div>
+
+  <h2>O que levar:</h2>
+  <div class="item"><div class="row"><input type="checkbox"><label>Câmera Fotográfica: caso encontre algum defeito, fotografe</label></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>Balde: para checar o escoamento da áreas molhadas</label></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>Lâmpada: para testar os bocais</label></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>Carregador e celular: para testar as tomadas</label></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>Canetinha ou etiqueta: para marcar pisos defeituosos</label></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>Trena: para medir os ambientes</label></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>Papel e caneta: para anotações</label></div></div>
+
+  <h2>Check list:</h2>
+  <div class="item"><div class="row"><input type="checkbox"><label>Antes de tudo verifique se a área construída está de acordo com a que foi adquirida.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>1 - Pisos e azulejos:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>1.1 - Confira se os pisos e azulejos estão bem colocados, se não há peças trincadas e se o rejunte está bem feito. Use adesivos para marcar peças com defeito.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>1.2 - Observe se há peças ocas: dê também uma batidinha de leve na parede e caminhe sobre o piso com atenção.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>2 - Portas e janelas:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>2.1 - Abra cada uma das portas e veja se ela não agarra no piso. Feche e teste as maçanetas. Não se esqueça de testar o olho mágico da porta de entrada.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>2.2 - Teste as chaves.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>2.3 - Verifique a pintura ou verniz das portas, bem como as fechaduras e dobradiças.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>2.4 - Abra e feche todas as janelas.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>2.5 - Observe se os vidros estão bem presos ou se ficam trepidando com o vento.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>2.6 - Verifique se não há nenhum ponto de ferrugem ou tinta descascando e se não há tinta grudada nos vidros ou se eles não estão riscados ou manchados.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>3 - Elétrica:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>3.1 - Caso o imóvel esteja ainda sem energia elétrica, deixe isso claro no seu termo de vistoria.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>3.2 - Confira se todos os pontos de energia que estavam no projeto foram instalados.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>3.3 - Teste todas as tomadas com um carregador de celular que você levou.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>3.4 - Se os soquetes já tiverem instalados, teste também as lâmpadas.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>3.5 - Teste os interfones.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>3.6 - Abra o quadro de luz e veja os disjuntores. Eles devem estar identificados.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>4 - Pintura, textura e gesso:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>4.1 - Veja se a pintura está bem feita, se a parede está lisa, se não há manchas, nem tinta escorrendo.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>4.2 - Confira se não há nenhuma rachadura ou infiltração.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>5 - Pia ou tanque:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>5.1 - Jogue água na cuba e veja se ela está entupida ou se escoa bem.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>5.2 - Com a torneira aberta, olhe embaixo da bancada: veja se não há vazamento no sifão nem nos flexíveis (que levam água para as torneiras).</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>5.3 - Veja também se a bancada da pia foi instalada bem na horizontal ou se está torta e acumula água em algum canto.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>5.4 - Confira todas as torneiras, sifões, registros se não há arranhões, amassados ou descascados. Verifique se são das marcas que estão no memorial descritivo.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>6 - Pisos:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>6.1 - Com o balde ou mangueira jogue água e observe se ela está indo em direção ao ralo.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>6.2 - Jogue água direto no ralo e veja se ele está entupido.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>7 - Louças (banheiros):</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>7.1 - Confira se vaso sanitário e pias não estão trincados.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>7.2 - Acione a descarga veja se tudo funciona bem e se há algum vazamento.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>7.3 - Jogue água na cuba e veja se ela está entupida ou se escoa bem.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>7.4 - Com a torneira aberta, olhe embaixo da bancada: veja se não há vazamento no sifão nem nos flexíveis (que levam água para as torneiras).</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>8 - Metais:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>8.1 - Confira todas as torneiras, sifões, registros se não há arranhões, amassados ou descascados. Verifique se são das marcas que estão no memorial descritivo.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>9 - Tubulações:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>9.1 - Com o balde ou mangueira jogue água e observe se ela está indo em direção ao ralo.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>9.2 - Jogue água direto no ralo e veja se ele está entupido.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>9.3 - Verifique a tubulação para o chuveiro, se o cano está visível e se a altura do cano não está muito perto do teto pois pode dificultar a instalação de um chuveiro.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>10 - Varanda ou sacada:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>10.1 - Com o balde ou mangueira jogue água e observe se ela está indo em direção ao ralo.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>10.2 - Jogue água direto no ralo e veja se ele está entupido.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>10.3 - Verifique se o guarda corpo está firme e bem instalado.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>10.4 - Verifique a pintura do guarda-corpo, e se ele não está amassado ou empenado.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>10.5 - Em casos de guarda-corpo de vidro verifique se não há manchas ou trincas.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>11 - Corredores:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>11.1 - Verifique a numeração na porta do apartamento.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>11.2 - Verifique a sinalização do andar.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>11.3 - Verifique o equipamento de proteção contra incêndio.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>12 – Elevadores e escadas:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>12.1 - Verifique o funcionamento e o estado de conservação dos elevadores.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>12.2 - Verifique o guarda corpo das escadas.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>12.3 - Verifique se os materiais das escadas estão de acordo com o memorial descritivo.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>12.4 - Verifique as portas corta fogo das escadas.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>13 - Hall de entrada:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>13.1 - Confira se os acabamentos estão de acordo com o memorial descritivo.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>13.2 - Verifique o fechamento das portas.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>13.3 - Caso tenha havido contratação de decoração, verifique se tudo foi entregue.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <h3>14 - Estacionamento:</h3>
+  <div class="item"><div class="row"><input type="checkbox"><label>14.1 - Verifique a demarcação das vagas.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+  <div class="item"><div class="row"><input type="checkbox"><label>14.2 - Confira o funcionamento dos portões da garagem caso não haja porteiro.</label></div><div class="obs"><label>📝 Observações</label><textarea></textarea></div></div>
+
+  <div class="signature">
+    <label for="ass">✍️ Assinatura da Vistoria</label>
+    <input id="ass" type="text" placeholder="Digite ou cole sua assinatura eletrônica" />
+  </div>
+
+  <script>
+    document.getElementById('toggleAll').addEventListener('click', () => {
+      const boxes = document.querySelectorAll('input[type=checkbox]');
+      const allChecked = Array.from(boxes).every(b => b.checked);
+      boxes.forEach(b => b.checked = !allChecked);
+    });
+  </script>
+</body>
+</html>
