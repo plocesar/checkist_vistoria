@@ -17,31 +17,6 @@ h1 {
   margin: 0;
 }
 
-.meta {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-header label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-  font-size: 14px;
-  color: white;
-}
-
-header input {
-  margin-top: 5px;
-  padding: 12px;           /* altura maior */
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  width: 180px;
-}
-
 .item {
   background: white;
   padding: 10px;
@@ -54,10 +29,6 @@ header input {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.row label {
-  font-weight: bold;        /* deixa todas as perguntas em negrito */
 }
 
 textarea {
@@ -76,7 +47,7 @@ textarea {
 }
 
 button {
-  padding: 6px 12px;
+  padding: 5px 10px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -112,18 +83,38 @@ footer {
   font-weight: bold;
 }
 
-/* Ajuste apenas para versão mobile */
+/* --- Ajustes apenas para versão mobile --- */
 @media (max-width: 600px) {
   .meta {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
 
   header label {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: bold;
   }
 
   header input {
     width: 100%;
+    height: 45px;          /* altura uniforme */
+    font-size: 16px;
+    border-radius: 10px;   /* borda arredondada */
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    box-sizing: border-box;
+  }
+
+  /* Campo de data */
+  header input[type="date"] {
+    padding-left: 8px;
+    font-size: 16px;
+    height: 45px;
+    border-radius: 10px;
   }
 }
