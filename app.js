@@ -194,3 +194,104 @@ footer {
   font-size: 14px;
   color: var(--azul-escuro);
 }
+
+function capturePhoto(button) {
+  const fileInput = button.parentElement.querySelector('input[type=file]');
+  fileInput.setAttribute('capture', 'environment');
+  fileInput.click();
+}
+
+function selectPhoto(button) {
+  const fileInput = button.parentElement.querySelector('input[type=file]');
+  fileInput.removeAttribute('capture');
+  fileInput.click();
+}
+
+function previewPhoto(input) {
+  const img = input.parentElement.querySelector('.preview');
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => { img.src = e.target.result; };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+// Assinatura
+const canvas = document.getElementById("signature-pad");
+if (canvas) {
+  const ctx = canvas.getContext("2d");
+  let drawing = false;
+
+  function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = 200;
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "#123a85";
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  function startDraw(e) {
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(getX(e), getY(e));
+    e.preventDefault();
+  }
+
+  function draw(e) {
+    if (!drawing) return;
+    ctx.lineTo(getX(e), getY(e));
+    ctx.stroke();
+    e.preventDefault();
+  }
+
+  function endDraw() {
+    drawing = false;
+    ctx.closePath();
+  }
+
+  function getX(e) {
+    if (e.touches) return e.touches[0].clientX - canvas.getBoundingClientRect().left;
+    return e.clientX - canvas.getBoundingClientRect().left;
+  }
+  function getY(e) {
+    if (e.touches) return e.touches[0].clientY - canvas.getBoundingClientRect().top;
+    return e.clientY - canvas.getBoundingClientRect().top;
+  }
+
+  canvas.addEventListener("mousedown", startDraw);
+  canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mouseup", endDraw);
+  canvas.addEventListener("mouseleave", endDraw);
+
+  canvas.addEventListener("touchstart", startDraw);
+  canvas.addEventListener("touchmove", draw);
+  canvas.addEventListener("touchend", endDraw);
+
+  window.clearSignature = function() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  };
+
+  window.saveSignature = function() {
+    const dataURL = canvas.toDataURL();
+    alert("Assinatura salva! (base64 gerado)");
+    console.log(dataURL);
+  };
+}
+
+// Exportar PDF
+async function exportPDF() {
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF("p", "pt", "a4");
+  const content = document.body;
+
+  await html2canvas(content, { scale: 2 }).then(canvas => {
+    const imgData = canvas.toDataURL("image/png");
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+  });
+
+  pdf.save("checklist_vistoria.pdf");
+}
