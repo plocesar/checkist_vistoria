@@ -8,778 +8,739 @@
 </head>
 <body>
   <header>
-    <h1>🏠 Check-list de Vistoria</h1>
+    <h1>🏠 <strong>Check-list de Vistoria</strong></h1>
     <div class="meta">
-      <label>📅 Data
+      <label><strong>📅 Data</strong>
         <input type="date" />
       </label>
-      <label>👤 Responsável
+      <label><strong>👤 Responsável</strong>
         <input type="text" placeholder="Seu nome" />
       </label>
-      <label>🏢 Imóvel
+      <label><strong>🏢 Imóvel</strong>
         <input type="text" placeholder="Bloco/Unidade" />
       </label>
     </div>
   </header>
 
-  <!-- o resto do seu conteúdo continua aqui -->
+  <main id="conteudo">
+    <section>
+      <h2><strong>O que levar</strong></h2>
+      <div class="item">
+        <ul class="lista-levar">
+          <li><strong>📷 Câmera fotográfica:</strong> fotografe qualquer defeito encontrado.</li>
+          <li><strong>🪣 Balde:</strong> para checar o escoamento das áreas molhadas.</li>
+          <li><strong>💡 Lâmpada:</strong> para testar os bocais.</li>
+          <li><strong>📱 Carregador e celular:</strong> para testar as tomadas.</li>
+          <li><strong>✒️ Canetinha ou etiqueta:</strong> para marcar pisos defeituosos.</li>
+          <li><strong>📏 Trena:</strong> para medir os ambientes.</li>
+          <li><strong>📝 Papel e caneta:</strong> para anotações.</li>
+        </ul>
+      </div>
+    </section>
 
+    <section>
+      <h2><strong>Checklist</strong></h2>
 
-    <h2>O que levar:</h2>
-    <div class="item">
-      <p><strong>📷 Câmera Fotográfica:</strong> caso encontre algum defeito, fotografe</p>
-      <p><strong>🪣 Balde:</strong> para checar o escoamento da áreas molhadas</p>
-      <p><strong>💡 Lâmpada:</strong> para testar os bocais</p>
-      <p><strong>📱 Carregador e celular:</strong> para testar as tomadas</p>
-      <p><strong>✒️ Canetinha ou etiqueta:</strong> para marcar pisos defeituosos</p>
-      <p><strong>📏 Trena:</strong> para medir os ambientes</p>
-      <p><strong>📝 Papel e caneta:</strong> para anotações</p>
-    </div>
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-0">
+          <label for="it-0"><strong>Antes de tudo</strong>: verifique se a área construída está de acordo com a que foi adquirida.</label>
+        </div>
+      </div>
 
-    <h2>Checklist:</h2>
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>Antes de tudo verifique se a área construída está de acordo com a que foi adquirida.</label>
-      </div>
-    </div>
-    <h3>Em cada cômodo Avalie:</h3>
+      <h3><strong>Em cada cômodo, avalie</strong>:</h3>
 
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>1.1 - Confira se os pisos e azulejos estão bem colocados, se não há peças trincadas e se o rejunte está bem feito. Use adesivos para marcar peças com defeito.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>1.2 - Observe se há peças ocas: dê também uma batidinha de leve na parede e caminhe sobre o piso com atenção.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>2.1 - Abra cada uma das portas e veja se ela não agarra no piso. Feche e teste as maçanetas. Não se esqueça de testar o olho mágico da porta de entrada.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>2.2 - Teste as chaves.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>2.3 - Verifique a pintura ou verniz das portas, bem como as fechaduras e dobradiças.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>2.4 - Abra e feche todas as janelas.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>2.3 - Observe se os vidros estão bem presos ou se ficam trepidando com o vento.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>2.4 - Verifique se não há nenhum ponto de ferrugem ou tinta descascando e se não há tinta grudada nos vidro ou se eles não estão riscados ou manchados.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>3.1 - Caso o imóvel esteja ainda sem energia elétrica, deixe isso claro no seu termo de vistoria.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>3.2 - Confira se todos os pontos de energia que estavam no projeto foram instalados.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>3.3 - Teste todas as tomadas com um carregador de celular que você levou.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>3.4 - Se os soquetes já tiverem instalados, teste também as lâmpadas.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>3.5 - Teste os interfones.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>3.6 - Abra o quadro de luz e veja os disjuntores. Eles devem estar identificados.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>4.1 - Veja se a pintura está bem feita, se a parede está lisa, se não há manchas, nem tinta escorrendo.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>4.2 - Confira se não há nenhuma rachadura ou infiltração.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>5.1 - Jogue água na cuba e veja se ela está entupida ou se escoa bem.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>5.2 - Com a torneira aberta, olhe embaixo da bancada: veja se não há vazamento no sifão nem nos flexíveis (que levam água para as torneiras).</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>5.3 - Veja também se a bancada da pia foi instalada bem na horizontal ou se está torta e acumula água em algum canto.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>5.4 - Confira todas as torneiras, sifões, registros se não há arranhões, amassados ou descascados. Verifique se são das marcas que estão no memorial descritivo.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>6.1 - Com o balde ou mangueira jogue água e observe se ela está indo em direção ao ralo.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>6.2 - Jogue água direto no ralo e veja se ele está entupido.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>7.1 - Confira se vaso sanitário e pias não estão trincados.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>7.2 - Acione a descarga veja se tudo funciona bem e se há algum vazamento.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>7.3 - Jogue água na cuba e veja se ela está entupida ou se escoa bem.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>7.4 - Com a torneira aberta, olhe embaixo da bancada: veja se não há vazamento no sifão nem nos flexíveis (que levam água para as torneiras).</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>8.1 - Confira todas as torneiras, sifões, registros se não há arranhões, amassados ou descascados. Verifique se são das marcas que estão no memorial descritivo.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>9.1 - Com o balde ou mangueira jogue água e observe se ela está indo em direção ao ralo.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>9.2 - Jogue água direto no ralo e veja se ele está entupido.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>9.3 - Verifique a tubulação para o chuveiro, se o cano está visível e se a altura do cano não está muito perto do teto pois pode dificultar a instalação de um chuveiro.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>10.1 - Com o balde ou mangueira jogue água e observe se ela está indo em direção ao ralo.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>10.2 - Jogue água direto no ralo e veja se ele está entupido.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>10.3 - Verifique se o guarda corpo está firme e bem instalado.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>10.4 - Verifique a pintura do guarda-corpo, e se ele não está amassado ou empenado.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>10.5 - Em casos de guarda-corpo de vidro verifique se não há manchas ou trincas.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>11.1 - Verifique a numeração na porta do apartamento.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>11.2 - Verifique a sinalização do andar.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>11.3 - Verifique o equipamento de proteção contra incendio.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>12.1 - Verifique o funcionamento e o estado de conservação dos elevadores.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>12.2 - Verifique o guarda corpo das escadas.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>12.3 - Verifique se os materiais das escadas estão de acordo com o memorial descritivo.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>12.4 - Verifique as portas corta fogo das escadas.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>13.1 - Confira se os acabamentos estão de acordo com o memorial descritivo.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>13.2 - Verifique o fechamento das portas.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>13.3 - Caso tenha havido contratação de decoração, verifique se tudo foi entregue.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>14.1 - Verifique a demarcação das vagas.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-    <div class="item">
-      <div class="row">
-        <input type="checkbox">
-        <label>14.2 - Confira o funcionamento dos portões da garagem caso não haja porteiro.</label>
-      </div>
-      <textarea placeholder="Observações..."></textarea>
-      <div class="photo-buttons">
-        <button onclick="capturePhoto(this)">📸 Abrir câmera</button>
-        <button onclick="selectPhoto(this)">📂 Selecionar foto</button>
-        <input type="file" accept="image/*" style="display:none" onchange="previewPhoto(this)" />
-        <img class="preview" />
-      </div>
-    </div>
-    
-       <div class="signature">
-  <label>✍️ Assinatura da Vistoria</label>
-  <canvas id="signature-pad"></canvas>
-  <div class="signature-actions">
-    <button type="button" onclick="clearSignature()">🧹 Limpar assinatura</button>
-    <button type="button" onclick="saveSignature()">💾 Salvar assinatura</button>
+      <!-- 1.x Revestimentos -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-1-1">
+          <label for="it-1-1"><strong>1.1</strong> – Confira se os pisos e azulejos estão bem colocados, se não há peças trincadas e se o rejunte está bem feito. Use adesivos para marcar peças com defeito.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-1-2">
+          <label for="it-1-2"><strong>1.2</strong> – Observe se há peças ocas: dê batidinhas leves nas paredes e caminhe sobre o piso com atenção.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 2.x Esquadrias / Portas / Janelas -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-2-1">
+          <label for="it-2-1"><strong>2.1</strong> – Abra cada uma das portas e veja se não agarra no piso. Feche e teste as maçanetas. Não esqueça de testar o olho mágico da porta de entrada.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-2-2">
+          <label for="it-2-2"><strong>2.2</strong> – Teste as chaves.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-2-3">
+          <label for="it-2-3"><strong>2.3</strong> – Verifique a pintura ou verniz das portas, bem como fechaduras e dobradiças.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-2-4">
+          <label for="it-2-4"><strong>2.4</strong> – Abra e feche todas as janelas.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-2-5">
+          <label for="it-2-5"><strong>2.5</strong> – Observe se os vidros estão bem presos ou se trepidam com o vento.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-2-6">
+          <label for="it-2-6"><strong>2.6</strong> – Verifique se não há pontos de ferrugem, tinta descascando, tinta grudada no vidro, riscos ou manchas.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 3.x Elétrica -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-3-1">
+          <label for="it-3-1"><strong>3.1</strong> – Caso o imóvel esteja sem energia elétrica, deixe isso claro no termo de vistoria.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-3-2">
+          <label for="it-3-2"><strong>3.2</strong> – Confira se todos os pontos de energia previstos em projeto foram instalados.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-3-3">
+          <label for="it-3-3"><strong>3.3</strong> – Teste todas as tomadas com um carregador de celular.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-3-4">
+          <label for="it-3-4"><strong>3.4</strong> – Se houver soquetes instalados, teste as lâmpadas.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-3-5">
+          <label for="it-3-5"><strong>3.5</strong> – Teste os interfones.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-3-6">
+          <label for="it-3-6"><strong>3.6</strong> – Abra o quadro de luz e veja os disjuntores. Eles devem estar identificados.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 4.x Paredes/Pintura -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-4-1">
+          <label for="it-4-1"><strong>4.1</strong> – Veja se a pintura está bem feita, se a parede está lisa, sem manchas e sem tinta escorrendo.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-4-2">
+          <label for="it-4-2"><strong>4.2</strong> – Confira se não há nenhuma rachadura ou infiltração.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 5.x Cozinha/Áreas -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-5-1">
+          <label for="it-5-1"><strong>5.1</strong> – Jogue água na cuba e veja se ela está entupida ou se escoa bem.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-5-2">
+          <label for="it-5-2"><strong>5.2</strong> – Com a torneira aberta, verifique embaixo da bancada se não há vazamentos no sifão e nos flexíveis.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-5-3">
+          <label for="it-5-3"><strong>5.3</strong> – Veja se a bancada da pia está nivelada na horizontal (não pode acumular água).</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-5-4">
+          <label for="it-5-4"><strong>5.4</strong> – Confira torneiras, sifões e registros (riscos, amassados, descascados) e marcas conforme memorial descritivo.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 6.x Áreas molhadas (geral) -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-6-1">
+          <label for="it-6-1"><strong>6.1</strong> – Com balde ou mangueira jogue água e observe se ela vai em direção ao ralo.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-6-2">
+          <label for="it-6-2"><strong>6.2</strong> – Jogue água direto no ralo e veja se ele está entupido.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 7.x Banheiros -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-7-1">
+          <label for="it-7-1"><strong>7.1</strong> – Confira se vaso sanitário e pias não estão trincados.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-7-2">
+          <label for="it-7-2"><strong>7.2</strong> – Acione a descarga e veja se tudo funciona bem e se há vazamentos.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-7-3">
+          <label for="it-7-3"><strong>7.3</strong> – Jogue água na cuba e veja se ela está entupida ou se escoa bem.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-7-4">
+          <label for="it-7-4"><strong>7.4</strong> – Com a torneira aberta, verifique embaixo da bancada se não há vazamentos no sifão e nos flexíveis.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 8.x Metais e registros -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-8-1">
+          <label for="it-8-1"><strong>8.1</strong> – Confira todas as torneiras, sifões e registros: sem arranhões, amassados ou descascados; marcas conforme memorial.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 9.x Área de serviço / lavanderia -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-9-1">
+          <label for="it-9-1"><strong>9.1</strong> – Com balde ou mangueira jogue água e observe se ela vai em direção ao ralo.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-9-2">
+          <label for="it-9-2"><strong>9.2</strong> – Jogue água direto no ralo e veja se ele está entupido.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-9-3">
+          <label for="it-9-3"><strong>9.3</strong> – Verifique a tubulação para o chuveiro: cano visível e altura adequada para instalação.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 10.x Varanda / Guarda-corpo -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-10-1">
+          <label for="it-10-1"><strong>10.1</strong> – Com balde ou mangueira jogue água e observe se ela vai em direção ao ralo.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-10-2">
+          <label for="it-10-2"><strong>10.2</strong> – Jogue água direto no ralo e veja se ele está entupido.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-10-3">
+          <label for="it-10-3"><strong>10.3</strong> – Verifique se o guarda-corpo está firme e bem instalado.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-10-4">
+          <label for="it-10-4"><strong>10.4</strong> – Verifique a pintura do guarda-corpo e se não está amassado/empenado.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-10-5">
+          <label for="it-10-5"><strong>10.5</strong> – Em guarda-corpo de vidro, verifique se não há manchas ou trincas.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 11.x Identificação de unidade -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-11-1">
+          <label for="it-11-1"><strong>11.1</strong> – Verifique a numeração na porta do apartamento.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-11-2">
+          <label for="it-11-2"><strong>11.2</strong> – Verifique a sinalização do andar.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-11-3">
+          <label for="it-11-3"><strong>11.3</strong> – Verifique o equipamento de proteção contra incêndio.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 12.x Áreas comuns verticais -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-12-1">
+          <label for="it-12-1"><strong>12.1</strong> – Verifique o funcionamento e o estado de conservação dos elevadores.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-12-2">
+          <label for="it-12-2"><strong>12.2</strong> – Verifique o guarda-corpo das escadas.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-12-3">
+          <label for="it-12-3"><strong>12.3</strong> – Verifique se os materiais das escadas estão de acordo com o memorial descritivo.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-12-4">
+          <label for="it-12-4"><strong>12.4</strong> – Verifique as portas corta-fogo das escadas.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 13.x Áreas comuns (acabamentos/decoração) -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-13-1">
+          <label for="it-13-1"><strong>13.1</strong> – Confira se os acabamentos estão de acordo com o memorial descritivo.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-13-2">
+          <label for="it-13-2"><strong>13.2</strong> – Verifique o fechamento das portas.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-13-3">
+          <label for="it-13-3"><strong>13.3</strong> – Caso haja decoração contratada, verifique se tudo foi entregue.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- 14.x Garagem -->
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-14-1">
+          <label for="it-14-1"><strong>14.1</strong> – Verifique a demarcação das vagas.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <input type="checkbox" id="it-14-2">
+          <label for="it-14-2"><strong>14.2</strong> – Confira o funcionamento dos portões da garagem caso não haja porteiro.</label>
+        </div>
+        <textarea placeholder="Observações..."></textarea>
+        <div class="photo-buttons">
+          <button type="button" onclick="capturePhoto(this)">📸 Abrir câmera</button>
+          <button type="button" onclick="selectPhoto(this)">📂 Selecionar foto</button>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto(this)" />
+          <img class="preview" alt="Pré-visualização da foto" />
+        </div>
+      </div>
+
+      <!-- Assinatura -->
+      <div class="signature">
+        <label><strong>✍️ Assinatura da Vistoria</strong></label>
+        <canvas id="signature-pad"></canvas>
+        <div class="signature-actions">
+          <button type="button" onclick="clearSignature()">🧹 Limpar assinatura</button>
+          <button type="button" onclick="saveSignature()">💾 Salvar assinatura</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toolbar">
+    <button id="btn-exportar" onclick="exportPDF()"><strong>📄 Exportar PDF</strong></button>
   </div>
-</div>
 
-<script>
-  const canvas = document.getElementById("signature-pad");
-  const ctx = canvas.getContext("2d");
-  let drawing = false;
-
-  function resizeCanvas() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = 200;
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = "#123a85";
-  }
-  window.addEventListener("resize", resizeCanvas);
-  resizeCanvas();
-
-  function startDraw(e) {
-    drawing = true;
-    ctx.beginPath();
-    ctx.moveTo(getX(e), getY(e));
-    e.preventDefault();
-  }
-
-  function draw(e) {
-    if (!drawing) return;
-    ctx.lineTo(getX(e), getY(e));
-    ctx.stroke();
-    e.preventDefault();
-  }
-
-  function endDraw() {
-    drawing = false;
-    ctx.closePath();
-  }
-
-  function getX(e) {
-    if (e.touches) return e.touches[0].clientX - canvas.getBoundingClientRect().left;
-    return e.clientX - canvas.getBoundingClientRect().left;
-  }
-  function getY(e) {
-    if (e.touches) return e.touches[0].clientY - canvas.getBoundingClientRect().top;
-    return e.clientY - canvas.getBoundingClientRect().top;
-  }
-
-  // Eventos mouse
-  canvas.addEventListener("mousedown", startDraw);
-  canvas.addEventListener("mousemove", draw);
-  canvas.addEventListener("mouseup", endDraw);
-  canvas.addEventListener("mouseleave", endDraw);
-
-  // Eventos touch
-  canvas.addEventListener("touchstart", startDraw);
-  canvas.addEventListener("touchmove", draw);
-  canvas.addEventListener("touchend", endDraw);
-
-  function clearSignature() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  }
-
-  function saveSignature() {
-    const dataURL = canvas.toDataURL();
-    alert("Assinatura salva! (base64 gerado, pode ser enviado ao backend)");
-    console.log(dataURL);
-  }
-</script>
-
-    <footer>
-      📲 Instagram: @paulinhosantos.ofc
-    </footer>
-  </div>
+  <footer>
+    <span><strong>📲 Instagram:</strong> @paulinhosantos.ofc</span>
+  </footer>
 
   <!-- Bibliotecas para exportar PDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -787,4 +748,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-
