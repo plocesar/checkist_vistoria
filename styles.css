@@ -1,103 +1,13 @@
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-}
-header {
-  background: #123a85;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-.meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.meta label {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.9rem;
-}
-.item {
-  background: white;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.row {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-.row input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  accent-color: #123a85;
-}
-textarea {
-  width: 95%;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  resize: vertical;
-}
-.photo-buttons {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-.photo-buttons button {
-  flex: 1;
-  padding: 0.5rem;
-  background: #123a85;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.photo-buttons button:hover {
-  background: #0f2f68;
-}
-.preview {
-  margin-top: 0.5rem;
-  max-width: 100%;
-  border-radius: 6px;
-}
-.signature {
-  margin: 2rem;
-  text-align: center;
-}
-#signature-pad {
-  border: 2px dashed #123a85;
-  width: 100%;
-  max-width: 500px;
-  height: 200px;
-}
-.signature-actions button, .export button {
-  margin: 0.5rem;
-  padding: 0.7rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  background: #123a85;
-  color: white;
-  cursor: pointer;
-}
-.signature-actions button:hover, .export button:hover {
-  background: #0f2f68;
-}
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #123a85;
-  color: white;
-  margin-top: 2rem;
-}
+body { font-family: Arial, sans-serif; margin: 10px; padding: 0; background: #f9f9f9; }
+header { background: #123a85; color: white; padding: 15px; text-align: center; border-radius: 8px; }
+h1 { margin: 0; }
+.item { background: white; padding: 10px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.row { display: flex; align-items: center; gap: 10px; }
+textarea { width: 95%; min-height: 60px; margin-top: 5px; border-radius: 6px; padding: 6px; resize: vertical; }
+.photo-buttons { display: flex; gap: 10px; margin-top: 5px; }
+button { padding: 5px 10px; border: none; border-radius: 6px; cursor: pointer; background: #123a85; color: white; font-size: 14px; }
+.preview { max-width: 100px; margin-top: 5px; display: block; }
+.signature { background: white; padding: 10px; margin: 20px 0; border-radius: 8px; }
+#signature-pad { width: 100%; height: 200px; border: 2px dashed #123a85; border-radius: 8px; }
+footer { text-align: center; padding: 15px; color: #123a85; font-weight: bold; }
